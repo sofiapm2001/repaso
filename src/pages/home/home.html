@@ -1,14 +1,25 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Informador
     </ion-title>
+    <ion-buttons end>
+      <button (click)= "clickmostrar()">
+        <ion-icon name="star"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-card (click)= "clickver(c)" *ngFor = "let c of casas">
+        <img [src] =c.imagen/>
+        <ion-card-content>
+          <ion-card-title >
+            {{c.zona}}
+            </ion-card-title>
+          <p> {{c.precio}}</p>
+          <p> {{c.nombre}}</p>
+        </ion-card-content>
+      </ion-card>
 </ion-content>
